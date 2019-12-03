@@ -1,0 +1,1095 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "Net314Stack": {
+        "id": "Net314Stack",
+        "path": "Net314Stack",
+        "children": {
+          "InstanceCoreRole": {
+            "id": "InstanceCoreRole",
+            "path": "Net314Stack/InstanceCoreRole",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/InstanceCoreRole/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "ec2.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+                          ]
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "ElasticIP": {
+            "id": "ElasticIP",
+            "path": "Net314Stack/ElasticIP",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+              "aws:cdk:cloudformation:props": {}
+            }
+          },
+          "LeftVPC": {
+            "id": "LeftVPC",
+            "path": "Net314Stack/LeftVPC",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/LeftVPC/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.1.0.0/16",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "Net314Stack/LeftVPC"
+                      }
+                    ]
+                  }
+                }
+              },
+              "ingressLeftPublicSubnet1": {
+                "id": "ingressLeftPublicSubnet1",
+                "path": "Net314Stack/LeftVPC/ingressLeftPublicSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "Net314Stack/LeftVPC/ingressLeftPublicSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.1.0.0/24",
+                        "vpcId": {
+                          "Ref": "LeftVPCCC477B4F"
+                        },
+                        "availabilityZone": "us-east-1a",
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Net314Stack/LeftVPC/ingressLeftPublicSubnet1"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "ingressLeftPublic"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "Net314Stack/LeftVPC/ingressLeftPublicSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "Net314Stack/LeftVPC/ingressLeftPublicSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "LeftVPCCC477B4F"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Net314Stack/LeftVPC/ingressLeftPublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "Net314Stack/LeftVPC/ingressLeftPublicSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "LeftVPCingressLeftPublicSubnet1RouteTable0085D69D"
+                        },
+                        "subnetId": {
+                          "Ref": "LeftVPCingressLeftPublicSubnet1Subnet06004FBE"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "Net314Stack/LeftVPC/ingressLeftPublicSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "LeftVPCingressLeftPublicSubnet1RouteTable0085D69D"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "LeftVPCIGWD8633462"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "Net314Stack/LeftVPC/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "Net314Stack/LeftVPC"
+                      }
+                    ]
+                  }
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "Net314Stack/LeftVPC/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "LeftVPCCC477B4F"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "LeftVPCIGWD8633462"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "RightVPC": {
+            "id": "RightVPC",
+            "path": "Net314Stack/RightVPC",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/RightVPC/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.2.0.0/16",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "Net314Stack/RightVPC"
+                      }
+                    ]
+                  }
+                }
+              },
+              "ingressRightPublicSubnet1": {
+                "id": "ingressRightPublicSubnet1",
+                "path": "Net314Stack/RightVPC/ingressRightPublicSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "Net314Stack/RightVPC/ingressRightPublicSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.2.0.0/24",
+                        "vpcId": {
+                          "Ref": "RightVPC0D789BD1"
+                        },
+                        "availabilityZone": "us-east-1a",
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Net314Stack/RightVPC/ingressRightPublicSubnet1"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "ingressRightPublic"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "Net314Stack/RightVPC/ingressRightPublicSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "Net314Stack/RightVPC/ingressRightPublicSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "RightVPC0D789BD1"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Net314Stack/RightVPC/ingressRightPublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "Net314Stack/RightVPC/ingressRightPublicSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "RightVPCingressRightPublicSubnet1RouteTable531093CB"
+                        },
+                        "subnetId": {
+                          "Ref": "RightVPCingressRightPublicSubnet1Subnet431A6CE8"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "Net314Stack/RightVPC/ingressRightPublicSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "RightVPCingressRightPublicSubnet1RouteTable531093CB"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "RightVPCIGW6E1FFA35"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "Net314Stack/RightVPC/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "Net314Stack/RightVPC"
+                      }
+                    ]
+                  }
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "Net314Stack/RightVPC/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "RightVPC0D789BD1"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "RightVPCIGW6E1FFA35"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "SouthVPC": {
+            "id": "SouthVPC",
+            "path": "Net314Stack/SouthVPC",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/SouthVPC/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.3.0.0/16",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "Net314Stack/SouthVPC"
+                      }
+                    ]
+                  }
+                }
+              },
+              "ingressSouthPublicSubnet1": {
+                "id": "ingressSouthPublicSubnet1",
+                "path": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.3.0.0/24",
+                        "vpcId": {
+                          "Ref": "SouthVPCC019B37C"
+                        },
+                        "availabilityZone": "us-east-1a",
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "ingressSouthPublic"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "SouthVPCC019B37C"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "SouthVPCingressSouthPublicSubnet1RouteTableC754CF78"
+                        },
+                        "subnetId": {
+                          "Ref": "SouthVPCingressSouthPublicSubnet1Subnet94A4B609"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "SouthVPCingressSouthPublicSubnet1RouteTableC754CF78"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "SouthVPCIGW3F14B4ED"
+                        }
+                      }
+                    }
+                  },
+                  "NatInstance": {
+                    "id": "NatInstance",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1/NatInstance",
+                    "children": {
+                      "InstanceProfile": {
+                        "id": "InstanceProfile",
+                        "path": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1/NatInstance/InstanceProfile",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                          "aws:cdk:cloudformation:props": {
+                            "roles": [
+                              {
+                                "Ref": "SouthVPCNatRole1AB4A9DF"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1/NatInstance/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                          "aws:cdk:cloudformation:props": {
+                            "availabilityZone": "us-east-1a",
+                            "iamInstanceProfile": {
+                              "Ref": "SouthVPCingressSouthPublicSubnet1NatInstanceInstanceProfile817DC8EE"
+                            },
+                            "imageId": "ami-02cb555e324696ced",
+                            "instanceType": "t3.micro",
+                            "securityGroupIds": [
+                              {
+                                "Fn::GetAtt": [
+                                  "SouthVPCNatSecurityGroupA0DFA84A",
+                                  "GroupId"
+                                ]
+                              }
+                            ],
+                            "sourceDestCheck": false,
+                            "subnetId": {
+                              "Ref": "SouthVPCingressSouthPublicSubnet1Subnet94A4B609"
+                            },
+                            "tags": [
+                              {
+                                "key": "Name",
+                                "value": "Net314Stack/SouthVPC/ingressSouthPublicSubnet1/NatInstance"
+                              }
+                            ],
+                            "userData": {
+                              "Fn::Base64": "#!/bin/bash"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "ingressSouthPrivateSubnet1": {
+                "id": "ingressSouthPrivateSubnet1",
+                "path": "Net314Stack/SouthVPC/ingressSouthPrivateSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.3.1.0/24",
+                        "vpcId": {
+                          "Ref": "SouthVPCC019B37C"
+                        },
+                        "availabilityZone": "us-east-1a",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Net314Stack/SouthVPC/ingressSouthPrivateSubnet1"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "ingressSouthPrivate"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "SouthVPCC019B37C"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Net314Stack/SouthVPC/ingressSouthPrivateSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "SouthVPCingressSouthPrivateSubnet1RouteTableA9A888A5"
+                        },
+                        "subnetId": {
+                          "Ref": "SouthVPCingressSouthPrivateSubnet1Subnet6D0767C9"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "SouthVPCingressSouthPrivateSubnet1RouteTableA9A888A5"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "instanceId": {
+                          "Ref": "SouthVPCingressSouthPublicSubnet1NatInstance0D459DE5"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "Net314Stack/SouthVPC/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "Net314Stack/SouthVPC"
+                      }
+                    ]
+                  }
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "Net314Stack/SouthVPC/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "SouthVPCC019B37C"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "SouthVPCIGW3F14B4ED"
+                    }
+                  }
+                }
+              },
+              "NatSecurityGroup": {
+                "id": "NatSecurityGroup",
+                "path": "Net314Stack/SouthVPC/NatSecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Net314Stack/SouthVPC/NatSecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Security Group for NAT instances",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "securityGroupIngress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "ipProtocol": "tcp",
+                            "fromPort": 0,
+                            "toPort": 65535,
+                            "description": "from 0.0.0.0/0:ALL PORTS"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Net314Stack/SouthVPC"
+                          }
+                        ],
+                        "vpcId": {
+                          "Ref": "SouthVPCC019B37C"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "NatRole": {
+                "id": "NatRole",
+                "path": "Net314Stack/SouthVPC/NatRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "Net314Stack/SouthVPC/NatRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ec2.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "Net314Stack/SouthVPC"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "LeftSecurityGroup": {
+            "id": "LeftSecurityGroup",
+            "path": "Net314Stack/LeftSecurityGroup",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/LeftSecurityGroup/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "Net314Stack/LeftSecurityGroup",
+                    "groupName": "LeftSecurityGroup",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "10.0.0.0/8",
+                        "ipProtocol": "-1",
+                        "description": "All"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "LeftVPCCC477B4F"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "RightSecurityGroup": {
+            "id": "RightSecurityGroup",
+            "path": "Net314Stack/RightSecurityGroup",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/RightSecurityGroup/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "Net314Stack/RightSecurityGroup",
+                    "groupName": "RightSecurityGroup",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "10.0.0.0/8",
+                        "ipProtocol": "-1",
+                        "description": "All"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "RightVPC0D789BD1"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "OpenSwanSecurityGroup": {
+            "id": "OpenSwanSecurityGroup",
+            "path": "Net314Stack/OpenSwanSecurityGroup",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/OpenSwanSecurityGroup/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "Net314Stack/OpenSwanSecurityGroup",
+                    "groupName": "OpenSwanSecurityGroup",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "10.0.0.0/8",
+                        "ipProtocol": "-1",
+                        "description": "All"
+                      },
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "ipProtocol": "udp",
+                        "fromPort": 500,
+                        "toPort": 500,
+                        "description": "All"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "SouthVPCC019B37C"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "SouthSecurityGroup": {
+            "id": "SouthSecurityGroup",
+            "path": "Net314Stack/SouthSecurityGroup",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/SouthSecurityGroup/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "Net314Stack/SouthSecurityGroup",
+                    "groupName": "SouthSecurityGroup",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "10.0.0.0/8",
+                        "ipProtocol": "-1",
+                        "description": "All"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "SouthVPCC019B37C"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "LeftEC2": {
+            "id": "LeftEC2",
+            "path": "Net314Stack/LeftEC2",
+            "children": {
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "Net314Stack/LeftEC2/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "InstanceCoreRole89111137"
+                      }
+                    ]
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/LeftEC2/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                  "aws:cdk:cloudformation:props": {
+                    "availabilityZone": "us-east-1a",
+                    "iamInstanceProfile": {
+                      "Ref": "LeftEC2InstanceProfile5C84AF54"
+                    },
+                    "imageId": {
+                      "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "instanceType": "t3.micro",
+                    "securityGroupIds": [
+                      {
+                        "Fn::GetAtt": [
+                          "LeftSecurityGroup5EDD9D6E",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnetId": {
+                      "Ref": "LeftVPCingressLeftPublicSubnet1Subnet06004FBE"
+                    },
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "Left"
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": "#!/bin/bash"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "Net314Stack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter"
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "Net314Stack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118"
+          },
+          "RightEC2": {
+            "id": "RightEC2",
+            "path": "Net314Stack/RightEC2",
+            "children": {
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "Net314Stack/RightEC2/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "InstanceCoreRole89111137"
+                      }
+                    ]
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/RightEC2/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                  "aws:cdk:cloudformation:props": {
+                    "availabilityZone": "us-east-1a",
+                    "iamInstanceProfile": {
+                      "Ref": "RightEC2InstanceProfileD8FC6F10"
+                    },
+                    "imageId": {
+                      "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "instanceType": "t3.micro",
+                    "securityGroupIds": [
+                      {
+                        "Fn::GetAtt": [
+                          "RightSecurityGroupA7C053E9",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnetId": {
+                      "Ref": "RightVPCingressRightPublicSubnet1Subnet431A6CE8"
+                    },
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "Right"
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": "#!/bin/bash"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "OpenSwanEC2": {
+            "id": "OpenSwanEC2",
+            "path": "Net314Stack/OpenSwanEC2",
+            "children": {
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "Net314Stack/OpenSwanEC2/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "InstanceCoreRole89111137"
+                      }
+                    ]
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/OpenSwanEC2/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                  "aws:cdk:cloudformation:props": {
+                    "availabilityZone": "us-east-1a",
+                    "iamInstanceProfile": {
+                      "Ref": "OpenSwanEC2InstanceProfile4F8A155F"
+                    },
+                    "imageId": {
+                      "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "instanceType": "t3.micro",
+                    "securityGroupIds": [
+                      {
+                        "Fn::GetAtt": [
+                          "OpenSwanSecurityGroupC634C1DB",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "sourceDestCheck": false,
+                    "subnetId": {
+                      "Ref": "SouthVPCingressSouthPublicSubnet1Subnet94A4B609"
+                    },
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "OpenSwan"
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": "#!/bin/bash"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "SouthEC2": {
+            "id": "SouthEC2",
+            "path": "Net314Stack/SouthEC2",
+            "children": {
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "Net314Stack/SouthEC2/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "InstanceCoreRole89111137"
+                      }
+                    ]
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "Net314Stack/SouthEC2/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::Instance",
+                  "aws:cdk:cloudformation:props": {
+                    "availabilityZone": "us-east-1a",
+                    "iamInstanceProfile": {
+                      "Ref": "SouthEC2InstanceProfileE3F8E480"
+                    },
+                    "imageId": {
+                      "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                    },
+                    "instanceType": "t3.micro",
+                    "securityGroupIds": [
+                      {
+                        "Fn::GetAtt": [
+                          "SouthSecurityGroupBDFC3141",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnetId": {
+                      "Ref": "SouthVPCingressSouthPrivateSubnet1Subnet6D0767C9"
+                    },
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "Private"
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": "#!/bin/bash"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

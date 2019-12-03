@@ -1,0 +1,574 @@
+Resources:
+  InstanceCoreRole89111137:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/AmazonSSMManagedInstanceCore
+    Metadata:
+      aws:cdk:path: Net314Stack/InstanceCoreRole/Resource
+  ElasticIP:
+    Type: AWS::EC2::EIP
+    Metadata:
+      aws:cdk:path: Net314Stack/ElasticIP
+  LeftVPCCC477B4F:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.1.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      InstanceTenancy: default
+      Tags:
+        - Key: Name
+          Value: Net314Stack/LeftVPC
+    Metadata:
+      aws:cdk:path: Net314Stack/LeftVPC/Resource
+  LeftVPCingressLeftPublicSubnet1Subnet06004FBE:
+    Type: AWS::EC2::Subnet
+    Properties:
+      CidrBlock: 10.1.0.0/24
+      VpcId:
+        Ref: LeftVPCCC477B4F
+      AvailabilityZone: us-east-1a
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: Net314Stack/LeftVPC/ingressLeftPublicSubnet1
+        - Key: aws-cdk:subnet-name
+          Value: ingressLeftPublic
+        - Key: aws-cdk:subnet-type
+          Value: Public
+    Metadata:
+      aws:cdk:path: Net314Stack/LeftVPC/ingressLeftPublicSubnet1/Subnet
+  LeftVPCingressLeftPublicSubnet1RouteTable0085D69D:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: LeftVPCCC477B4F
+      Tags:
+        - Key: Name
+          Value: Net314Stack/LeftVPC/ingressLeftPublicSubnet1
+    Metadata:
+      aws:cdk:path: Net314Stack/LeftVPC/ingressLeftPublicSubnet1/RouteTable
+  LeftVPCingressLeftPublicSubnet1RouteTableAssociationC502397F:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+        Ref: LeftVPCingressLeftPublicSubnet1RouteTable0085D69D
+      SubnetId:
+        Ref: LeftVPCingressLeftPublicSubnet1Subnet06004FBE
+    Metadata:
+      aws:cdk:path: Net314Stack/LeftVPC/ingressLeftPublicSubnet1/RouteTableAssociation
+  LeftVPCingressLeftPublicSubnet1DefaultRoute0446D452:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId:
+        Ref: LeftVPCingressLeftPublicSubnet1RouteTable0085D69D
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId:
+        Ref: LeftVPCIGWD8633462
+    DependsOn:
+      - LeftVPCVPCGW1CFEB4DF
+    Metadata:
+      aws:cdk:path: Net314Stack/LeftVPC/ingressLeftPublicSubnet1/DefaultRoute
+  LeftVPCIGWD8633462:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: Net314Stack/LeftVPC
+    Metadata:
+      aws:cdk:path: Net314Stack/LeftVPC/IGW
+  LeftVPCVPCGW1CFEB4DF:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId:
+        Ref: LeftVPCCC477B4F
+      InternetGatewayId:
+        Ref: LeftVPCIGWD8633462
+    Metadata:
+      aws:cdk:path: Net314Stack/LeftVPC/VPCGW
+  RightVPC0D789BD1:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.2.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      InstanceTenancy: default
+      Tags:
+        - Key: Name
+          Value: Net314Stack/RightVPC
+    Metadata:
+      aws:cdk:path: Net314Stack/RightVPC/Resource
+  RightVPCingressRightPublicSubnet1Subnet431A6CE8:
+    Type: AWS::EC2::Subnet
+    Properties:
+      CidrBlock: 10.2.0.0/24
+      VpcId:
+        Ref: RightVPC0D789BD1
+      AvailabilityZone: us-east-1a
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: Net314Stack/RightVPC/ingressRightPublicSubnet1
+        - Key: aws-cdk:subnet-name
+          Value: ingressRightPublic
+        - Key: aws-cdk:subnet-type
+          Value: Public
+    Metadata:
+      aws:cdk:path: Net314Stack/RightVPC/ingressRightPublicSubnet1/Subnet
+  RightVPCingressRightPublicSubnet1RouteTable531093CB:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: RightVPC0D789BD1
+      Tags:
+        - Key: Name
+          Value: Net314Stack/RightVPC/ingressRightPublicSubnet1
+    Metadata:
+      aws:cdk:path: Net314Stack/RightVPC/ingressRightPublicSubnet1/RouteTable
+  RightVPCingressRightPublicSubnet1RouteTableAssociationD2A65CE3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+        Ref: RightVPCingressRightPublicSubnet1RouteTable531093CB
+      SubnetId:
+        Ref: RightVPCingressRightPublicSubnet1Subnet431A6CE8
+    Metadata:
+      aws:cdk:path: Net314Stack/RightVPC/ingressRightPublicSubnet1/RouteTableAssociation
+  RightVPCingressRightPublicSubnet1DefaultRouteF7127F55:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId:
+        Ref: RightVPCingressRightPublicSubnet1RouteTable531093CB
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId:
+        Ref: RightVPCIGW6E1FFA35
+    DependsOn:
+      - RightVPCVPCGW800DF635
+    Metadata:
+      aws:cdk:path: Net314Stack/RightVPC/ingressRightPublicSubnet1/DefaultRoute
+  RightVPCIGW6E1FFA35:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: Net314Stack/RightVPC
+    Metadata:
+      aws:cdk:path: Net314Stack/RightVPC/IGW
+  RightVPCVPCGW800DF635:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId:
+        Ref: RightVPC0D789BD1
+      InternetGatewayId:
+        Ref: RightVPCIGW6E1FFA35
+    Metadata:
+      aws:cdk:path: Net314Stack/RightVPC/VPCGW
+  SouthVPCC019B37C:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.3.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      InstanceTenancy: default
+      Tags:
+        - Key: Name
+          Value: Net314Stack/SouthVPC
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/Resource
+  SouthVPCingressSouthPublicSubnet1Subnet94A4B609:
+    Type: AWS::EC2::Subnet
+    Properties:
+      CidrBlock: 10.3.0.0/24
+      VpcId:
+        Ref: SouthVPCC019B37C
+      AvailabilityZone: us-east-1a
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: Net314Stack/SouthVPC/ingressSouthPublicSubnet1
+        - Key: aws-cdk:subnet-name
+          Value: ingressSouthPublic
+        - Key: aws-cdk:subnet-type
+          Value: Public
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/ingressSouthPublicSubnet1/Subnet
+  SouthVPCingressSouthPublicSubnet1RouteTableC754CF78:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: SouthVPCC019B37C
+      Tags:
+        - Key: Name
+          Value: Net314Stack/SouthVPC/ingressSouthPublicSubnet1
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/ingressSouthPublicSubnet1/RouteTable
+  SouthVPCingressSouthPublicSubnet1RouteTableAssociation627B4808:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+        Ref: SouthVPCingressSouthPublicSubnet1RouteTableC754CF78
+      SubnetId:
+        Ref: SouthVPCingressSouthPublicSubnet1Subnet94A4B609
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/ingressSouthPublicSubnet1/RouteTableAssociation
+  SouthVPCingressSouthPublicSubnet1DefaultRouteA8DF4222:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId:
+        Ref: SouthVPCingressSouthPublicSubnet1RouteTableC754CF78
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId:
+        Ref: SouthVPCIGW3F14B4ED
+    DependsOn:
+      - SouthVPCVPCGW7EF12494
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/ingressSouthPublicSubnet1/DefaultRoute
+  SouthVPCingressSouthPublicSubnet1NatInstanceInstanceProfile817DC8EE:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - Ref: SouthVPCNatRole1AB4A9DF
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/ingressSouthPublicSubnet1/NatInstance/InstanceProfile
+  SouthVPCingressSouthPublicSubnet1NatInstance0D459DE5:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      IamInstanceProfile:
+        Ref: SouthVPCingressSouthPublicSubnet1NatInstanceInstanceProfile817DC8EE
+      ImageId: ami-02cb555e324696ced
+      InstanceType: t3.micro
+      SecurityGroupIds:
+        - Fn::GetAtt:
+            - SouthVPCNatSecurityGroupA0DFA84A
+            - GroupId
+      SourceDestCheck: false
+      SubnetId:
+        Ref: SouthVPCingressSouthPublicSubnet1Subnet94A4B609
+      Tags:
+        - Key: Name
+          Value: Net314Stack/SouthVPC/ingressSouthPublicSubnet1/NatInstance
+      UserData:
+        Fn::Base64: "#!/bin/bash"
+    DependsOn:
+      - SouthVPCNatRole1AB4A9DF
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/ingressSouthPublicSubnet1/NatInstance/Resource
+  SouthVPCingressSouthPrivateSubnet1Subnet6D0767C9:
+    Type: AWS::EC2::Subnet
+    Properties:
+      CidrBlock: 10.3.1.0/24
+      VpcId:
+        Ref: SouthVPCC019B37C
+      AvailabilityZone: us-east-1a
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: Net314Stack/SouthVPC/ingressSouthPrivateSubnet1
+        - Key: aws-cdk:subnet-name
+          Value: ingressSouthPrivate
+        - Key: aws-cdk:subnet-type
+          Value: Private
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/Subnet
+  SouthVPCingressSouthPrivateSubnet1RouteTableA9A888A5:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: SouthVPCC019B37C
+      Tags:
+        - Key: Name
+          Value: Net314Stack/SouthVPC/ingressSouthPrivateSubnet1
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/RouteTable
+  SouthVPCingressSouthPrivateSubnet1RouteTableAssociation8557D3DB:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+        Ref: SouthVPCingressSouthPrivateSubnet1RouteTableA9A888A5
+      SubnetId:
+        Ref: SouthVPCingressSouthPrivateSubnet1Subnet6D0767C9
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/RouteTableAssociation
+  SouthVPCingressSouthPrivateSubnet1DefaultRoute505CA1A3:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId:
+        Ref: SouthVPCingressSouthPrivateSubnet1RouteTableA9A888A5
+      DestinationCidrBlock: 0.0.0.0/0
+      InstanceId:
+        Ref: SouthVPCingressSouthPublicSubnet1NatInstance0D459DE5
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/DefaultRoute
+  SouthVPCIGW3F14B4ED:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: Net314Stack/SouthVPC
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/IGW
+  SouthVPCVPCGW7EF12494:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId:
+        Ref: SouthVPCC019B37C
+      InternetGatewayId:
+        Ref: SouthVPCIGW3F14B4ED
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/VPCGW
+  SouthVPCNatSecurityGroupA0DFA84A:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security Group for NAT instances
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          Description: Allow all outbound traffic by default
+          IpProtocol: "-1"
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          Description: from 0.0.0.0/0:ALL PORTS
+          FromPort: 0
+          IpProtocol: tcp
+          ToPort: 65535
+      Tags:
+        - Key: Name
+          Value: Net314Stack/SouthVPC
+      VpcId:
+        Ref: SouthVPCC019B37C
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/NatSecurityGroup/Resource
+  SouthVPCNatRole1AB4A9DF:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+        Version: "2012-10-17"
+      Tags:
+        - Key: Name
+          Value: Net314Stack/SouthVPC
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthVPC/NatRole/Resource
+  LeftSecurityGroup5EDD9D6E:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Net314Stack/LeftSecurityGroup
+      GroupName: LeftSecurityGroup
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          Description: Allow all outbound traffic by default
+          IpProtocol: "-1"
+      SecurityGroupIngress:
+        - CidrIp: 10.0.0.0/8
+          Description: All
+          IpProtocol: "-1"
+      VpcId:
+        Ref: LeftVPCCC477B4F
+    Metadata:
+      aws:cdk:path: Net314Stack/LeftSecurityGroup/Resource
+  RightSecurityGroupA7C053E9:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Net314Stack/RightSecurityGroup
+      GroupName: RightSecurityGroup
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          Description: Allow all outbound traffic by default
+          IpProtocol: "-1"
+      SecurityGroupIngress:
+        - CidrIp: 10.0.0.0/8
+          Description: All
+          IpProtocol: "-1"
+      VpcId:
+        Ref: RightVPC0D789BD1
+    Metadata:
+      aws:cdk:path: Net314Stack/RightSecurityGroup/Resource
+  OpenSwanSecurityGroupC634C1DB:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Net314Stack/OpenSwanSecurityGroup
+      GroupName: OpenSwanSecurityGroup
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          Description: Allow all outbound traffic by default
+          IpProtocol: "-1"
+      SecurityGroupIngress:
+        - CidrIp: 10.0.0.0/8
+          Description: All
+          IpProtocol: "-1"
+        - CidrIp: 0.0.0.0/0
+          Description: All
+          FromPort: 500
+          IpProtocol: udp
+          ToPort: 500
+      VpcId:
+        Ref: SouthVPCC019B37C
+    Metadata:
+      aws:cdk:path: Net314Stack/OpenSwanSecurityGroup/Resource
+  SouthSecurityGroupBDFC3141:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Net314Stack/SouthSecurityGroup
+      GroupName: SouthSecurityGroup
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          Description: Allow all outbound traffic by default
+          IpProtocol: "-1"
+      SecurityGroupIngress:
+        - CidrIp: 10.0.0.0/8
+          Description: All
+          IpProtocol: "-1"
+      VpcId:
+        Ref: SouthVPCC019B37C
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthSecurityGroup/Resource
+  LeftEC2InstanceProfile5C84AF54:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - Ref: InstanceCoreRole89111137
+    Metadata:
+      aws:cdk:path: Net314Stack/LeftEC2/InstanceProfile
+  LeftEC2E4B04D39:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      IamInstanceProfile:
+        Ref: LeftEC2InstanceProfile5C84AF54
+      ImageId:
+        Ref: SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter
+      InstanceType: t3.micro
+      SecurityGroupIds:
+        - Fn::GetAtt:
+            - LeftSecurityGroup5EDD9D6E
+            - GroupId
+      SubnetId:
+        Ref: LeftVPCingressLeftPublicSubnet1Subnet06004FBE
+      Tags:
+        - Key: Name
+          Value: Left
+      UserData:
+        Fn::Base64: "#!/bin/bash"
+    DependsOn:
+      - InstanceCoreRole89111137
+    Metadata:
+      aws:cdk:path: Net314Stack/LeftEC2/Resource
+  RightEC2InstanceProfileD8FC6F10:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - Ref: InstanceCoreRole89111137
+    Metadata:
+      aws:cdk:path: Net314Stack/RightEC2/InstanceProfile
+  RightEC2722C7DA6:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      IamInstanceProfile:
+        Ref: RightEC2InstanceProfileD8FC6F10
+      ImageId:
+        Ref: SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter
+      InstanceType: t3.micro
+      SecurityGroupIds:
+        - Fn::GetAtt:
+            - RightSecurityGroupA7C053E9
+            - GroupId
+      SubnetId:
+        Ref: RightVPCingressRightPublicSubnet1Subnet431A6CE8
+      Tags:
+        - Key: Name
+          Value: Right
+      UserData:
+        Fn::Base64: "#!/bin/bash"
+    DependsOn:
+      - InstanceCoreRole89111137
+    Metadata:
+      aws:cdk:path: Net314Stack/RightEC2/Resource
+  OpenSwanEC2InstanceProfile4F8A155F:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - Ref: InstanceCoreRole89111137
+    Metadata:
+      aws:cdk:path: Net314Stack/OpenSwanEC2/InstanceProfile
+  OpenSwanEC295932CC9:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      IamInstanceProfile:
+        Ref: OpenSwanEC2InstanceProfile4F8A155F
+      ImageId:
+        Ref: SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter
+      InstanceType: t3.micro
+      SecurityGroupIds:
+        - Fn::GetAtt:
+            - OpenSwanSecurityGroupC634C1DB
+            - GroupId
+      SourceDestCheck: false
+      SubnetId:
+        Ref: SouthVPCingressSouthPublicSubnet1Subnet94A4B609
+      Tags:
+        - Key: Name
+          Value: OpenSwan
+      UserData:
+        Fn::Base64: "#!/bin/bash"
+    DependsOn:
+      - InstanceCoreRole89111137
+    Metadata:
+      aws:cdk:path: Net314Stack/OpenSwanEC2/Resource
+  SouthEC2InstanceProfileE3F8E480:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - Ref: InstanceCoreRole89111137
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthEC2/InstanceProfile
+  SouthEC2E5BB10BF:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      IamInstanceProfile:
+        Ref: SouthEC2InstanceProfileE3F8E480
+      ImageId:
+        Ref: SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter
+      InstanceType: t3.micro
+      SecurityGroupIds:
+        - Fn::GetAtt:
+            - SouthSecurityGroupBDFC3141
+            - GroupId
+      SubnetId:
+        Ref: SouthVPCingressSouthPrivateSubnet1Subnet6D0767C9
+      Tags:
+        - Key: Name
+          Value: Private
+      UserData:
+        Fn::Base64: "#!/bin/bash"
+    DependsOn:
+      - InstanceCoreRole89111137
+    Metadata:
+      aws:cdk:path: Net314Stack/SouthEC2/Resource
+  CDKMetadata:
+    Type: AWS::CDK::Metadata
+    Properties:
+      Modules: aws-cdk=1.17.1,@aws-cdk/aws-cloudwatch=1.18.0,@aws-cdk/aws-ec2=1.18.0,@aws-cdk/aws-iam=1.18.0,@aws-cdk/aws-ssm=1.18.0,@aws-cdk/core=1.18.0,@aws-cdk/cx-api=1.18.0,@aws-cdk/region-info=1.18.0,jsii-runtime=node.js/v12.8.1
+Parameters:
+  SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2
+

@@ -1,0 +1,1274 @@
+{
+  "version": "1.16.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "Net314Stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://493833316326/us-east-1",
+      "properties": {
+        "templateFile": "Net314Stack.template.json"
+      },
+      "metadata": {
+        "/Net314Stack/InstanceCoreRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InstanceCoreRole89111137",
+            "trace": [
+              "new Role (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-iam/lib/role.ts:300:18)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:11:18)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/ElasticIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ElasticIP",
+            "trace": [
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:18:23)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/LeftVPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeftVPCCC477B4F",
+            "trace": [
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:994:21)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:22:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/LeftVPC/ingressLeftPublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeftVPCingressLeftPublicSubnet1Subnet06004FBE",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1311:20)",
+              "new PublicSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1526:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1177:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:22:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/LeftVPC/ingressLeftPublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeftVPCingressLeftPublicSubnet1RouteTable0085D69D",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1328:19)",
+              "new PublicSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1526:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1177:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:22:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/LeftVPC/ingressLeftPublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeftVPCingressLeftPublicSubnet1RouteTableAssociationC502397F",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1334:5)",
+              "new PublicSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1526:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1177:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:22:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/LeftVPC/ingressLeftPublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeftVPCingressLeftPublicSubnet1DefaultRoute0446D452",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1350:19)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1038:22",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1037:46)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:22:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/LeftVPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeftVPCIGWD8633462",
+            "trace": [
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1029:19)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:22:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/LeftVPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeftVPCVPCGW1CFEB4DF",
+            "trace": [
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1032:19)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:22:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/RightVPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RightVPC0D789BD1",
+            "trace": [
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:994:21)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:34:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/RightVPC/ingressRightPublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RightVPCingressRightPublicSubnet1Subnet431A6CE8",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1311:20)",
+              "new PublicSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1526:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1177:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:34:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/RightVPC/ingressRightPublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RightVPCingressRightPublicSubnet1RouteTable531093CB",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1328:19)",
+              "new PublicSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1526:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1177:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:34:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/RightVPC/ingressRightPublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RightVPCingressRightPublicSubnet1RouteTableAssociationD2A65CE3",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1334:5)",
+              "new PublicSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1526:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1177:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:34:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/RightVPC/ingressRightPublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RightVPCingressRightPublicSubnet1DefaultRouteF7127F55",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1350:19)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1038:22",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1037:46)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:34:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/RightVPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RightVPCIGW6E1FFA35",
+            "trace": [
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1029:19)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:34:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/RightVPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RightVPCVPCGW800DF635",
+            "trace": [
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1032:19)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:34:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCC019B37C",
+            "trace": [
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:994:21)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/ingressSouthPublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCingressSouthPublicSubnet1Subnet94A4B609",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1311:20)",
+              "new PublicSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1526:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1177:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/ingressSouthPublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCingressSouthPublicSubnet1RouteTableC754CF78",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1328:19)",
+              "new PublicSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1526:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1177:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/ingressSouthPublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCingressSouthPublicSubnet1RouteTableAssociation627B4808",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1334:5)",
+              "new PublicSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1526:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1177:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/ingressSouthPublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCingressSouthPublicSubnet1DefaultRouteA8DF4222",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1350:19)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1038:22",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1037:46)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/ingressSouthPublicSubnet1/NatInstance/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCingressSouthPublicSubnet1NatInstanceInstanceProfile817DC8EE",
+            "trace": [
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:255:24)",
+              "NatInstance.configureNat (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:155:27)",
+              "Vpc.createNatGateways (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1129:14)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1044:14)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/ingressSouthPublicSubnet1/NatInstance/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCingressSouthPublicSubnet1NatInstance0D459DE5",
+            "trace": [
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:278:21)",
+              "NatInstance.configureNat (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:155:27)",
+              "Vpc.createNatGateways (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1129:14)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1044:14)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCingressSouthPrivateSubnet1Subnet6D0767C9",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1311:20)",
+              "new PrivateSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1565:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1182:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCingressSouthPrivateSubnet1RouteTableA9A888A5",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1328:19)",
+              "new PrivateSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1565:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1182:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCingressSouthPrivateSubnet1RouteTableAssociation8557D3DB",
+            "trace": [
+              "new Subnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1334:5)",
+              "new PrivateSubnet (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1565:5)",
+              "/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1182:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1159:28)",
+              "Vpc.createSubnets (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1148:12)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1022:10)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/ingressSouthPrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCingressSouthPrivateSubnet1DefaultRoute505CA1A3",
+            "trace": [
+              "PrivateSubnet.addRoute (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1396:19)",
+              "NatInstance.configureNat (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:171:11)",
+              "Vpc.createNatGateways (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1129:14)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1044:14)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCIGW3F14B4ED",
+            "trace": [
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1029:19)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCVPCGW7EF12494",
+            "trace": [
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1032:19)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/NatSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCNatSecurityGroupA0DFA84A",
+            "trace": [
+              "new SecurityGroup (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:323:26)",
+              "NatInstance.configureNat (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:142:16)",
+              "Vpc.createNatGateways (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1129:14)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1044:14)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthVPC/NatRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthVPCNatRole1AB4A9DF",
+            "trace": [
+              "new Role (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-iam/lib/role.ts:300:18)",
+              "NatInstance.configureNat (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:150:18)",
+              "Vpc.createNatGateways (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1129:14)",
+              "new Vpc (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1044:14)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:46:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/LeftSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeftSecurityGroup5EDD9D6E",
+            "trace": [
+              "new SecurityGroup (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:323:26)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:68:20)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/RightSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RightSecurityGroupA7C053E9",
+            "trace": [
+              "new SecurityGroup (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:323:26)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:74:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/OpenSwanSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OpenSwanSecurityGroupC634C1DB",
+            "trace": [
+              "new SecurityGroup (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:323:26)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:80:24)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthSecurityGroupBDFC3141",
+            "trace": [
+              "new SecurityGroup (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:323:26)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:87:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/LeftEC2/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeftEC2InstanceProfile5C84AF54",
+            "trace": [
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:255:24)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:101:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/LeftEC2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeftEC2E4B04D39",
+            "trace": [
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:278:21)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:101:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn-ami-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+            "trace": [
+              "Function.fromStringParameterAttributes (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ssm/lib/parameter.ts:288:9)",
+              "Function.valueForTypedStringParameter (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ssm/lib/parameter.ts:358:17)",
+              "AmazonLinuxImage.getImage (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/machine-image.ts:155:37)",
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:260:44)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:101:21)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/RightEC2/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RightEC2InstanceProfileD8FC6F10",
+            "trace": [
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:255:24)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:111:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/RightEC2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RightEC2722C7DA6",
+            "trace": [
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:278:21)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:111:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/OpenSwanEC2/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OpenSwanEC2InstanceProfile4F8A155F",
+            "trace": [
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:255:24)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:121:25)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/OpenSwanEC2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OpenSwanEC295932CC9",
+            "trace": [
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:278:21)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:121:25)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthEC2/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthEC2InstanceProfileE3F8E480",
+            "trace": [
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:255:24)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:132:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Net314Stack/SouthEC2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SouthEC2E5BB10BF",
+            "trace": [
+              "new Instance (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/@aws-cdk/aws-ec2/lib/instance.ts:278:21)",
+              "new Net314Stack (/Users/mikapted/Documents/Projects/mikeapted/net-314/lib/net314-stack.ts:132:22)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/bin/net314.ts:13:1)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Module.m._compile (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:536:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/index.ts:539:12)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "main (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/Users/mikapted/Documents/Projects/mikeapted/net-314/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:868:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)",
+              "Module.load (internal/modules/cjs/loader.js:731:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:644:12)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:931:10)",
+              "/Users/mikapted/.nvm/versions/node/v12.8.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/core": "1.18.0",
+      "@aws-cdk/cx-api": "1.18.0",
+      "@aws-cdk/aws-ec2": "1.18.0",
+      "@aws-cdk/aws-iam": "1.18.0",
+      "@aws-cdk/region-info": "1.18.0",
+      "@aws-cdk/aws-ssm": "1.18.0",
+      "@aws-cdk/aws-cloudwatch": "1.18.0",
+      "jsii-runtime": "node.js/v12.8.1"
+    }
+  }
+}
